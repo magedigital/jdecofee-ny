@@ -1,0 +1,138 @@
+.indexProducts {
+    position: relative;
+    margin: -48rem 0;
+    padding: 218rem 0 286rem;
+
+    @include bg("/media/products-bg-desktop.jpg", 100% auto, center 10rem);
+
+    @include mob {
+        @include bg("/media/products-bg-mob.jpg", 100% auto, center 14rem);
+    }
+
+    & {
+        background-color: #f9d5a0;
+    }
+
+    @include mob {
+        padding: 132rem 0 152rem;
+    }
+
+    &__inner {
+        transition: $trans;
+    }
+
+    &:not(._init) &__inner {
+        opacity: 0;
+    }
+
+    &__title {
+        margin-bottom: 76rem;
+        text-align: center;
+
+        @include mob {
+            margin-bottom: 56rem;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        padding: 0 80rem;
+
+        @include mob {
+            padding: 0;
+        }
+
+        &Btn {
+            position: absolute;
+            top: 76rem;
+            z-index: 2;
+            width: 64rem;
+            height: 64rem;
+            padding: 21rem;
+            background: #fff;
+            border-radius: 50%;
+            transition: $trans;
+
+            @include icon(#aa1f22);
+
+            @include mob {
+                top: 86rem;
+                width: 52rem;
+                height: 52rem;
+                padding: 17rem;
+            }
+
+            &._prev {
+                left: 0;
+            }
+
+            &._next {
+                right: 0;
+            }
+        }
+
+        &Inner {
+            width: 100%;
+        }
+
+        &Items {
+            display: inline-flex;
+        }
+
+        &Item {
+            width: 198rem;
+            transition: $trans;
+
+            @include mob {
+                width: 382rem;
+                padding: 0 72rem;
+            }
+
+            &:not(._current) {
+                opacity: 0;
+
+                @include mob {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__product {
+        width: 100%;
+
+        &Head {
+            width: 100%;
+            aspect-ratio: 1;
+            margin-bottom: 32rem;
+            padding: 0 18rem;
+
+            @include mob {
+                aspect-ratio: 10/9;
+            }
+        }
+
+        &Thumb {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        &Title {
+            width: 100%;
+            padding: 0 16rem;
+            color: #033918;
+            font-weight: 600;
+            font-size: 14rem;
+            line-height: 1.3;
+            text-align: center;
+
+            @include mob {
+                font-size: 18rem;
+            }
+        }
+    }
+}

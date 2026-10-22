@@ -1,0 +1,189 @@
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__topInfo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40rem;
+        padding: 12rem;
+        color: #fff;
+        font-size: 16rem;
+        text-align: center;
+        background: #00431e;
+
+        @include mob {
+            height: 64rem;
+        }
+
+        & a {
+            display: inline-block;
+            color: #fff;
+            border-bottom: 1rem solid rgba(#fff, 0.72);
+        }
+    }
+
+    &._inner &__topBar:not(._fix) {
+        background: #023717;
+    }
+
+    &._withTop &__topBar {
+        top: 40rem;
+
+        @include mob {
+            top: 64rem;
+        }
+
+        &._fix:not(._show) {
+            transform: translate(0, calc(-100% - 40rem));
+
+            @include mob {
+                transform: translate(0, calc(-100% - 64rem));
+            }
+        }
+    }
+
+    &__topBar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        transition: $trans;
+
+        &._fix {
+            z-index: 3;
+            background: #023717;
+            border-radius: 0 0 48rem 48rem;
+
+            @include mob {
+                border-radius: 0 0 24rem 24rem;
+            }
+        }
+
+        &._fix:not(._show) {
+            transform: translate(0, -100%);
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: 100%;
+        height: 100%;
+    }
+
+    &._withTop &__menu {
+        padding-top: 64rem;
+    }
+
+    &__scroll {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &Inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: var(--wheight);
+        }
+
+        &Content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+
+            // overflow: clip;
+
+            // transform: translate(0, -3900px);
+            transition: $trans;
+        }
+    }
+
+    &__loader {
+        top: 0;
+        height: var(--wheight);
+    }
+
+    &._loading &__scrollContent {
+        opacity: 0;
+    }
+
+    &._inner &__scrollContent {
+        width: 1150rem;
+        margin: 0 auto;
+        padding: 150rem 0 100rem;
+        border-radius: 24rem;
+
+        @include mob {
+            width: 100%;
+            padding: 114rem 15rem;
+            background: none;
+            border-radius: 20rem;
+        }
+    }
+
+    &._withTop._inner &__scrollContent {
+        padding-top: 190rem;
+
+        @include mob {
+            padding-top: 178rem;
+        }
+    }
+
+    &._inner &__scrollInner {
+        background: linear-gradient(to right, #003316, #1c752c, #003316);
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            content: "";
+
+            @include bg("/media/inners-bg-desktop.jpg", 100% auto, center top);
+
+            @include mob {
+                @include bg("/media/inners-bg-mob.jpg", 100% auto, center top);
+            }
+        }
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20rem;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+
+    &._inner .footer {
+        margin-top: -36rem;
+    }
+}

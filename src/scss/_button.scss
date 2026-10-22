@@ -1,0 +1,82 @@
+.v2button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 16rem 34rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2rem solid transparent;
+    border-radius: 360rem;
+
+    @include desk {
+        @include button(0.97);
+    }
+
+    @include mob {
+        padding: 14rem 26rem;
+        font-size: 17rem;
+    }
+
+    &._mediumSize {
+        padding: 15rem 26rem;
+        font-size: 15rem;
+
+        @include mob {
+            font-size: 18rem;
+        }
+    }
+
+    &._minSize {
+        padding: 14rem 16rem;
+        font-size: 12rem;
+
+        @include mob {
+            font-size: 15rem;
+        }
+    }
+
+    &._mainColor {
+        color: #fff;
+        background: #005024;
+
+        &._disabled {
+            opacity: 0.3;
+        }
+    }
+
+    &._subColor {
+        color: #023717;
+        background: #f1d79f;
+    }
+
+    &._whiteEmptyColor {
+        color: #fff;
+        border-color: #fff;
+    }
+
+    &._whiteColor {
+        color: #023717;
+        background: #fff;
+    }
+
+    &._greenEmptyColor {
+        color: #005024;
+        border-color: #005024;
+    }
+
+    &__loader {
+        background: inherit;
+        border-radius: inherit;
+
+        & .loader__itemInner {
+            background: #fff;
+        }
+    }
+}

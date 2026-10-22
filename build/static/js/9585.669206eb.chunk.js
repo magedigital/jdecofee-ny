@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunk||=[]).push([[9585],{9585(l,s,i){i.r(s);i(5247);var c=i(1367);const e=(0,c.jsxs)("svg",{viewBox:"0 0 22 22",fill:"none",children:[(0,c.jsx)("circle",{cx:"11",cy:"11",r:"11",fill:"white"}),(0,c.jsx)("path",{d:"M16.5007 11L7.33398 5.5V16.5L16.5007 11Z",fill:"#FF49B8"})]});i.d(s,["default",0,e])}}]);

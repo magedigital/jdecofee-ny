@@ -1,0 +1,182 @@
+.indexRules {
+    @include bg("/media/steps-bg-desktop.jpg", 100% auto, center top);
+
+    position: relative;
+    z-index: 1;
+    margin: -40rem 0;
+    padding: 136rem 0 198rem;
+
+    @include mob {
+        margin: -32rem 0;
+        padding: 98rem 0 108rem;
+
+        @include bg("/media/steps-bg-mob.jpg", 100% auto, center top);
+    }
+
+    & {
+        background-color: #f9d5a0;
+    }
+
+    &__title {
+        margin-bottom: 78rem;
+        color: #023918;
+        font-weight: 500;
+        font-size: 20rem;
+        line-height: 1.3;
+        text-align: center;
+
+        @include mob {
+            margin-bottom: 12rem;
+            font-size: 18rem;
+        }
+    }
+
+    &__steps {
+        display: flex;
+        width: calc(100% + 64rem);
+        margin-left: -32rem;
+        counter-reset: stepCount;
+
+        @include mob {
+            flex-direction: column;
+            width: 100%;
+            margin-left: 0;
+            padding: 0 32rem;
+        }
+
+        &Item {
+            width: calc(100% / 3);
+            padding: 0 32rem;
+
+            @include mob {
+                width: 100%;
+                padding: 0;
+            }
+
+            &:nth-child(1) {
+                transform: translate(28rem, 0);
+
+                @include mob {
+                    margin-bottom: 32rem;
+                    transform: translate(0, 0);
+                }
+            }
+
+            &:nth-child(2) {
+                @include mob {
+                    margin-bottom: 22rem;
+                }
+            }
+        }
+    }
+
+    &__stepsItem:nth-child(1) &__stepThumb {
+        transform: translate(-4rem, 18rem);
+    }
+
+    &__stepsItem:nth-child(2) &__stepContent {
+        transform: translate(16rem, 0);
+
+        @include mob {
+            transform: translate(0, 0);
+        }
+    }
+
+    &__stepsItem:nth-child(2) &__stepHead {
+        @include mob {
+            height: 320rem;
+        }
+    }
+
+    &__stepsItem:nth-child(2) &__stepThumb {
+        transform: translate(0, -8rem);
+
+        @include mob {
+            transform: translate(0, 0);
+        }
+    }
+
+    &__stepsItem:nth-child(3) &__stepThumb {
+        transform: translate(24rem, 16rem);
+
+        @include mob {
+            transform: translate(0, 8rem);
+        }
+    }
+
+    &__step {
+        width: 100%;
+        counter-increment: stepCount;
+
+        &Head {
+            width: 100%;
+            height: 288rem;
+            margin-bottom: 22rem;
+
+            @include mob {
+                height: 272rem;
+                margin-bottom: 4rem;
+            }
+        }
+
+        &Thumb {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &Content {
+            position: relative;
+            padding-left: 98rem;
+
+            @include mob {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 78rem;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 78rem;
+                height: 78rem;
+                color: #eed8b8;
+                font-weight: 600;
+                font-size: 32rem;
+                background: #aa1f22;
+                border-radius: 50%;
+                content: counter(stepCount);
+            }
+        }
+
+        &Title {
+            margin-bottom: 8rem;
+            color: #023918;
+            font-weight: 700;
+            font-size: 24rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        &Text {
+            color: #023918;
+            font-weight: 500;
+            font-size: 18rem;
+            line-height: 1.3;
+
+            & a,
+            & span {
+                color: #023918;
+                font-weight: 500;
+                border-bottom: 1rem solid rgba(#023918, 0.8);
+                cursor: pointer;
+            }
+        }
+    }
+}

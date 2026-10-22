@@ -1,0 +1,11 @@
+import React from 'react';
+
+export default (
+    <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8.99414 1.44141L15.5186 7.7207H0V9.7207H15.5186L8.99414 16L10.3809 17.4414L19.4424 8.7207L10.3809 0L8.99414 1.44141Z"
+            fill="#AA1F22"
+            className="icon__fill"
+        />
+    </svg>
+);

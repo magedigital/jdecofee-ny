@@ -1,0 +1,121 @@
+.faqForm {
+    width: 100%;
+    padding: 32rem 0 140rem;
+    background: radial-gradient(#fef8dc, #fef5c3 30%, #fadca6);
+
+    @include mob {
+        margin: -56rem 0 0;
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        width: 100%;
+        padding: 48rem;
+
+        @include mob {
+            width: 100%;
+            padding: 26rem 18rem;
+            border-radius: 24rem;
+        }
+
+        &Box {
+            align-items: center;
+            width: 100%;
+            transition: $trans;
+        }
+
+        &Blocks {
+            width: 750rem;
+
+            @include mob {
+                width: 100%;
+            }
+        }
+
+        &Block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &__success {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        will-change: transform;
+
+        &Inner {
+            align-items: center;
+            width: 100%;
+            margin: auto;
+            padding: 70rem 32rem;
+            background: #fff;
+            border-radius: 16rem;
+
+            @include mob {
+                width: 100%;
+                padding: 36rem 50rem;
+            }
+        }
+
+        &Title {
+            color: #00431e;
+            font-weight: 600;
+            font-size: 40rem;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include mob {
+                font-size: 28rem;
+            }
+        }
+
+        &Text {
+            margin-top: 18rem;
+            color: #00431e;
+            font-weight: 500;
+            font-size: 18rem;
+            line-height: 1.3;
+            text-align: center;
+
+            @include mob {
+                margin-top: 12rem;
+                font-size: 16rem;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin-bottom: 50rem;
+        color: #023717;
+        font-weight: 600;
+        font-size: 32rem;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include mob {
+            margin-bottom: 18rem;
+            font-size: 28rem;
+            line-height: 1.2;
+        }
+    }
+
+    &__form {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding-bottom: 20rem;
+
+        @include mob {
+            padding-bottom: 10rem;
+        }
+    }
+}

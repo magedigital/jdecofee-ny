@@ -1,0 +1,33 @@
+.faqHeader {
+    width: 100%;
+    padding: 0 0 20rem;
+
+    &__inner {
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 65rem;
+        text-align: center;
+
+        @include mob {
+            margin-bottom: 42rem;
+        }
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__item {
+        width: 100%;
+
+        & + & {
+            margin-top: 14rem;
+
+            @include mob {
+                margin-top: 12rem;
+            }
+        }
+    }
+}

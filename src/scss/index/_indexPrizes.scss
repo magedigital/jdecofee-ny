@@ -1,0 +1,224 @@
+.indexPrizes {
+    position: relative;
+    z-index: 2;
+    padding: 116rem 0 126rem;
+    border-radius: 40rem;
+
+    @include bg("/media/prizes-bg-desktop.jpg", 100% auto, center top);
+
+    @include mob {
+        padding: 82rem 0;
+        border-radius: 32rem;
+
+        @include bg("/media/prizes-bg-mob.jpg", 100% auto, center top);
+    }
+
+    & {
+        background-color: #003316;
+    }
+
+    &__inner {
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 64rem;
+
+        @include mob {
+            margin-bottom: 50rem;
+        }
+    }
+
+    &__mainPrize {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 552rem;
+        margin-bottom: 38rem;
+        overflow: hidden;
+        border-radius: 64rem;
+
+        @include bg("/media/main-prize-desktop.jpg", cover, center);
+
+        @include mob {
+            height: 622rem;
+            margin-bottom: 26rem;
+            border-radius: 28rem;
+
+            @include bg("/media/main-prize-mob.jpg", 100% auto, center top);
+        }
+
+        &Content {
+            width: 372rem;
+            height: 100%;
+            margin-left: auto;
+            padding-bottom: 51rem;
+            background: rgba(#000, 0.3);
+            border-radius: 24rem 0 0 24rem;
+
+            @include mob {
+                width: 100%;
+                padding-bottom: 0;
+                background: none;
+            }
+
+            &Inner {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                margin: auto 0 0;
+                padding: 38rem 41rem 35rem;
+                background: #aa1f22;
+                border-radius: 20rem 0 0 20rem;
+
+                @include mob {
+                    padding: 12rem 34rem 32rem;
+                    border-radius: 0;
+                }
+
+                &::before {
+                    position: absolute;
+                    bottom: 100%;
+                    left: 58rem;
+                    z-index: 2;
+                    width: 268rem;
+                    height: 80rem;
+                    margin-bottom: 33rem;
+                    content: "";
+
+                    @include bg("/media/plane-prize-desktop.svg", contain, left center);
+
+                    @include mob {
+                        position: relative;
+                        bottom: 0;
+                        left: 0;
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 8rem;
+
+                        @include bg("/media/plane-prize-mob.svg", contain, left center);
+                    }
+                }
+            }
+
+            &Title {
+                color: #fef6bf;
+                font-weight: 700;
+                font-size: 26rem;
+                line-height: 1.4;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__subTitle {
+        margin-bottom: 108rem;
+        color: #fff;
+        font-weight: 500;
+        font-size: 20rem;
+        line-height: 1.2;
+
+        @include mob {
+            margin-bottom: 79rem;
+            font-size: 18rem;
+            white-space: nowrap;
+            text-align: center;
+        }
+    }
+
+    &__weekPrizes {
+        display: flex;
+        width: 100%;
+        margin-top: 502rem;
+        padding: 0 20rem;
+
+        @include mob {
+            flex-direction: column;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        &Card {
+            width: 50%;
+
+            @include mob {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 100%;
+                height: 394rem;
+
+                & + & {
+                    margin-top: 46rem;
+                }
+            }
+        }
+    }
+
+    &__weekPrize {
+        align-items: center;
+        width: 100%;
+
+        &Title {
+            position: relative;
+            z-index: 1;
+            height: 68rem;
+            margin-bottom: 28rem;
+            padding-left: 68rem;
+            overflow: hidden;
+            background: #f9d5a0;
+            border-radius: 16rem;
+
+            @include mob {
+                margin-bottom: 16rem;
+            }
+
+            &Count {
+                position: absolute;
+                top: 0;
+                left: 0;
+                align-items: center;
+                justify-content: center;
+                width: 68rem;
+                padding: 2rem 0 0;
+                color: #033919;
+                font-weight: 600;
+                font-size: 13rem;
+                line-height: 1.1;
+                text-align: center;
+                background: #fff;
+                aspect-ratio: 1;
+
+                & span {
+                    font-size: 32rem;
+                    line-height: 1;
+                }
+            }
+
+            &Inner {
+                padding: 13rem 20rem 12rem;
+                color: #000;
+                font-weight: 500;
+                font-size: 20rem;
+                line-height: 1.05;
+
+                @include mob {
+                    padding-top: 14rem;
+                    font-size: 19rem;
+                }
+            }
+        }
+
+        &Text {
+            color: #fff;
+            font-weight: 500;
+            font-size: 20rem;
+            line-height: 1.1;
+            text-align: center;
+
+            @include mob {
+                font-size: 19rem;
+            }
+        }
+    }
+}

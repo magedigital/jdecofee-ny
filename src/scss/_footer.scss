@@ -1,0 +1,129 @@
+.footer {
+    position: relative;
+    z-index: 12;
+    width: 100%;
+    margin-top: auto;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #004b0e, #005024 25%, #004b0e 50%);
+        border-radius: 36rem 36rem 0 0;
+        content: "";
+        pointer-events: none;
+
+        @include mob {
+            border-radius: 32rem 32rem 0 0;
+        }
+    }
+
+    &__wrapper {
+        padding: 134rem 0 120rem;
+
+        @include mob {
+            padding: 70rem 0 110rem;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        bottom: 100%;
+        width: 520rem;
+        height: 520rem;
+        object-fit: contain;
+        pointer-events: none;
+
+        @include mob {
+            width: 280rem;
+            height: 280rem;
+        }
+
+        &._1 {
+            left: -200rem;
+            z-index: -2;
+            margin-bottom: -200rem;
+
+            @include mob {
+                left: -108rem;
+                margin-bottom: -110rem;
+            }
+        }
+
+        &._2 {
+            right: -160rem;
+            z-index: 2;
+            margin-bottom: -280rem;
+
+            @include mob {
+                right: -90rem;
+                margin-bottom: -100rem;
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__nav {
+        width: 100%;
+        margin-bottom: 74rem;
+
+        @include mob {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 64rem;
+            padding: 0 20rem;
+        }
+
+        &Link {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16rem;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+            transition: $trans;
+
+            @include button(0.97);
+
+            @include mob {
+                font-size: 18rem;
+                line-height: 1.35;
+            }
+
+            @include hover {
+                &:hover {
+                    // color: #00431e;
+                }
+            }
+
+            & + & {
+                margin-left: 94rem;
+
+                @include mob {
+                    margin-top: 42rem;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__text {
+        margin: 0 auto;
+        color: #fff;
+        font-size: 13rem;
+        line-height: 1.7;
+        text-align: center;
+
+        @include mob {
+            max-width: 95%;
+            font-size: 15.5rem;
+            line-height: 1.67;
+        }
+    }
+}

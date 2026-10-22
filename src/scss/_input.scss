@@ -1,0 +1,75 @@
+.input {
+    position: relative;
+
+    &._formField {
+        background: #fff;
+        border-radius: 12rem;
+    }
+
+    &__field {
+        resize: none;
+    }
+
+    &__field,
+    &__support {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &._area &__field,
+    &._area &__support {
+        align-items: flex-start;
+    }
+
+    &__support {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: text;
+        transition: $trans;
+    }
+
+    &._fill &__support {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &._select &__field,
+    &._select &__support {
+        cursor: pointer;
+        user-select: none;
+        pointer-events: visible;
+    }
+
+    &._subMode &__field,
+    &._subMode &__support {
+        padding: 10rem 52rem 10rem 20rem;
+        color: #200;
+        font-weight: 500;
+        font-size: 18rem;
+
+        @include mob {
+            padding: 10rem 52rem 10rem 16rem;
+            font-size: 18rem;
+        }
+    }
+
+    &._formField &__field,
+    &._formField &__support {
+        padding: 14rem 16rem;
+        color: #200;
+        font-weight: 500;
+        font-size: 18rem;
+
+        @include mob {
+            font-size: 18rem;
+        }
+    }
+
+    &._formField &__support {
+        color: rgba(#200, 0.6);
+    }
+}

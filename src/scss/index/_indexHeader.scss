@@ -1,0 +1,85 @@
+.indexHeader {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 729rem;
+    border-radius: 0 0 40rem 40rem;
+
+    @include bg("/media/bg-desktop.jpg", 100% auto, center top);
+
+    @include mob {
+        height: 648rem;
+        border-radius: 0 0 30rem 30rem;
+
+        @include bg("/media/bg-mob.jpg", 100% auto, center top);
+    }
+
+    &__inner {
+        padding: 180rem 0 0;
+
+        @include mob {
+            padding: 85rem 0 0;
+        }
+    }
+
+    &__content {
+        align-items: center;
+        width: 580rem;
+        margin: 0 -36rem 0 auto;
+
+        @include mob {
+            width: 86%;
+            margin: 0 auto;
+        }
+    }
+
+    &__slogan {
+        display: block;
+        width: 100%;
+        margin: 0 0 44rem -32rem;
+        object-fit: contain;
+
+        @include mob {
+            margin: 0 0 22rem;
+        }
+    }
+
+    &__button {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 304rem;
+        padding: 23rem;
+        overflow: hidden;
+        color: #1c4a27;
+        font-weight: 700;
+        font-size: 20rem;
+        text-align: center;
+        text-transform: uppercase;
+        background: #fff;
+        border-radius: 360rem;
+        box-shadow: 0 6rem 16rem 0 rgba(#83af8c, 1);
+
+        @include button;
+
+        @include mob {
+            width: 284rem;
+            padding: 17rem 20rem;
+            font-size: 18.5rem;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #fff 86%, #e6cf7b 100%);
+            content: "";
+            pointer-events: none;
+        }
+    }
+}

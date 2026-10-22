@@ -1,0 +1,173 @@
+.upload {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 16rem;
+    transition: $trans;
+
+    @include button(0.99);
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        border: 2rem solid transparent;
+        border-radius: inherit;
+        transition: $trans;
+        content: "";
+        pointer-events: none;
+    }
+
+    &__border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        transition: $trans;
+        pointer-events: none;
+
+        & .dashedBorder__rect {
+            stroke: #f1882c;
+            rx: 16rem;
+            ry: 16rem;
+        }
+    }
+
+    &._upload::before {
+        border-color: #200;
+    }
+
+    &._upload &__border {
+        opacity: 0;
+
+        // border: 3rem solid #10cfc9;
+    }
+
+    &._upload &__main {
+        opacity: 0;
+    }
+
+    &._over::before {
+        border-color: #fff;
+    }
+
+    & input {
+        display: none;
+    }
+
+    &__main {
+        padding: 40rem 20rem;
+        transition: $trans;
+
+        &Icon {
+            width: 22rem;
+            height: 22rem;
+            margin-bottom: 14rem;
+
+            @include icon(#220000);
+        }
+
+        &Description {
+            color: #200;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+    }
+
+    &__result {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        padding: 20rem;
+        background: #ffde82;
+        border: 2rem solid #f1882c;
+        border-radius: inherit;
+
+        &Name {
+            max-width: 100%;
+            margin-bottom: 16rem;
+            padding: 4rem 12rem;
+            overflow: hidden;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.4;
+            white-space: nowrap;
+            text-align: center;
+            text-overflow: ellipsis;
+            background: #200;
+            border-radius: 8rem;
+        }
+
+        &Button {
+            display: flex;
+            align-items: center;
+            color: #200;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.4;
+
+            &Icon {
+                width: 22rem;
+                height: 22rem;
+                margin-right: 8rem;
+
+                @include icon(#220000);
+            }
+        }
+    }
+
+    &__over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        padding: 20rem;
+        background: #fed5ff;
+        border-radius: inherit;
+
+        &Text {
+            color: #200;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.4;
+        }
+    }
+
+    &__loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        padding: 20rem;
+        background: #fff;
+        border: 2rem solid #200;
+        border-radius: inherit;
+
+        &Icon {
+            width: 24rem;
+            height: 24rem;
+            margin-bottom: 5rem;
+
+            & ._LL {
+                background: var(--sub-color);
+            }
+        }
+
+        &Text {
+            color: #200;
+            font-weight: 600;
+            font-size: 16rem;
+            line-height: 1.4;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    &__view {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 28rem;
+        padding-left: 34rem;
+
+        @include mob {
+            padding-left: 40rem;
+        }
+
+        &Inner {
+            color: #200;
+            font-weight: 500;
+            font-size: 14rem;
+            line-height: 1.3;
+
+            @include mob {
+                font-size: 16rem;
+            }
+
+            & a {
+                display: inline-block;
+                color: #aa1f22;
+                font-weight: 500;
+                line-height: 1;
+                border-bottom: 1px solid rgba(#aa1f22, 0.64);
+
+                @include mob {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    &._mediumSize &__view {
+        @include mob {
+            padding-left: 53rem;
+        }
+
+        &Inner {
+            font-size: 14rem;
+
+            @include mob {
+                font-size: 15.5rem;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    &._whiteColor &__view {
+        &Inner {
+            color: #fff;
+        }
+
+        & a {
+            color: #f9d4a0;
+            border-bottom: 1px solid rgba(#f9d4a0, 0.5);
+        }
+    }
+
+    &__box {
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        width: 24rem;
+        height: 24rem;
+        background: #fff;
+        border-radius: 4rem;
+        transition: $trans;
+
+        @include mob {
+            top: 50%;
+            width: 30rem;
+            height: 30rem;
+            border-radius: 5rem;
+            transform: translate(0, -50%);
+        }
+
+        &Icon {
+            width: 17rem;
+            height: 17rem;
+            opacity: 0;
+            transition: $trans;
+
+            @include icon(#fff);
+
+            @include mob {
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+    }
+
+    &._mediumSize &__box {
+        @include mob {
+            left: 0;
+            width: 36rem;
+            height: 36rem;
+        }
+
+        &Icon {
+            @include mob {
+                width: 23rem;
+                height: 23rem;
+            }
+        }
+    }
+
+    &._whiteColor &__box {
+        border-color: #fff;
+
+        @include icon(#023717);
+    }
+
+    &__input:checked ~ &__view &__box {
+        background: #005024;
+
+        &Icon {
+            opacity: 1;
+        }
+    }
+
+    &._white &__input:checked ~ &__view &__box {
+        background: #fff;
+    }
+
+    &._whiteColor &__input:checked ~ &__view &__box {
+        background: #f9d4a0;
+    }
+}

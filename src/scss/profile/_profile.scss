@@ -1,0 +1,100 @@
+.profile {
+    width: 100%;
+    padding: 0 0 120rem;
+
+    &__inner {
+        @include mob {
+            width: 394rem;
+        }
+    }
+
+    &__main {
+        width: 100%;
+        margin-bottom: 36rem;
+
+        @include mob {
+            margin-bottom: 22rem;
+        }
+    }
+
+    &__prizes {
+        align-items: center;
+        margin-top: 80rem;
+        transition: $trans;
+
+        &:not(._init) {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &Title {
+            margin-bottom: 38rem;
+        }
+
+        &Content {
+            padding: 40rem;
+            background: radial-gradient(#fef4d1, #fdf1ba 30%, #fbe1ab);
+            border-radius: 20rem;
+
+            @include mob {
+                padding: 32rem;
+            }
+        }
+
+        &Cards {
+            display: flex;
+            flex-wrap: wrap;
+            width: calc(100% + 80rem);
+            margin-left: -40rem;
+
+            @include mob {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &Card {
+            width: calc(100% / 3);
+            margin-bottom: 40rem;
+            padding: 0 40rem;
+
+            @include mob {
+                width: 100%;
+                margin-bottom: 48rem;
+                padding: 0;
+            }
+        }
+    }
+
+    &__cheques {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 38rem;
+
+        @include mob {
+            margin-top: 40rem;
+        }
+
+        &Title {
+            margin-bottom: 36rem;
+
+            @include mob {
+                margin-bottom: 32rem;
+            }
+        }
+
+        &Table {
+            width: 100%;
+            padding: 24rem;
+            background: radial-gradient(#fef4d1, #fdf1ba 30%, #fbe1ab);
+            border-radius: 22rem;
+
+            @include mob {
+                padding: 12rem 20rem;
+            }
+        }
+    }
+}

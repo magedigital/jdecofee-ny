@@ -1,0 +1,795 @@
+.popup {
+    position: relative;
+    z-index: 1;
+
+    &:not(._withIds) {
+        padding: 32rem;
+
+        @include mob {
+            padding: 24rem 16rem;
+        }
+    }
+
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &Box {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: var(--wheight);
+            padding: 32rem;
+            overflow: hidden;
+
+            @include mob {
+                display: block;
+                padding: 78rem 16rem 24rem;
+            }
+
+            &._notBar {
+                @include mob {
+                    padding: 16rem;
+                }
+            }
+        }
+    }
+
+    &._overlay &__wrapperBox {
+        @include mob {
+            padding-top: 62rem;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    ._BOT &__wrapperBox {
+        @include mob {
+            padding: 16rem;
+        }
+    }
+
+    &._minHeight &__wrapperBox {
+        padding-top: 120rem;
+        padding-bottom: 60rem;
+
+        @include mob {
+            padding-top: 78rem;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        width: 604rem;
+        margin: auto;
+        transition: $trans;
+
+        @include mob {
+            width: 100%;
+            margin: 0;
+            border-radius: 26rem;
+        }
+
+        &Box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 32rem 40rem 42rem;
+            overflow: hidden;
+            background: radial-gradient(#fef4d1, #fdf1ba 30%, #fbe1ab);
+            border-radius: 24rem;
+            transition: $trans;
+
+            &._empty {
+                padding: 0 !important;
+            }
+
+            &._loading {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            &._block {
+                display: block;
+            }
+
+            @include mob {
+                padding: 26rem 14rem 44rem;
+                background: radial-gradient(#fffdef, #fff9c1 24%, #f9d5a0);
+            }
+        }
+    }
+
+    &__loader {
+        height: var(--wheight);
+    }
+
+    &._loading &__innerBox {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &._chequePopup &__inner {
+        width: 604rem;
+
+        @include mob {
+            width: 100%;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 20rem;
+        left: 100%;
+        z-index: 10;
+        margin-left: 12rem;
+        transition: $trans;
+
+        @include mob {
+            inset: auto 0 100% auto;
+            margin: 0 0 18rem;
+        }
+    }
+
+    &._loading &__close {
+        opacity: 0;
+    }
+
+    &__height {
+        min-height: 180rem;
+        padding-bottom: 20rem;
+    }
+
+    &__steps {
+        width: 100%;
+
+        &Item {
+            top: 50%;
+            width: 100%;
+            transform: translate(0, -50%);
+
+            &:not([data-show])[data-prev] {
+                transform: translate(-32rem, -50%);
+            }
+
+            &:not([data-show])[data-next] {
+                transform: translate(32rem, -50%);
+            }
+        }
+    }
+
+    &__step {
+        width: 100%;
+    }
+
+    &__head {
+        justify-content: center;
+        margin-bottom: 26rem;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        color: #023717;
+        font-weight: 600;
+        font-size: 30rem;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+
+        &._bottom {
+            margin-bottom: 4rem;
+        }
+
+        @include mob {
+            font-size: 28rem;
+            line-height: 1.15;
+        }
+    }
+
+    &__description {
+        margin-top: 16rem;
+        color: #200;
+        font-weight: 500;
+        font-size: 16rem;
+        line-height: 1.3;
+        text-align: center;
+
+        @include mob {
+            margin-top: 12rem;
+            font-size: 17rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 8rem;
+
+        &._bottom {
+            margin-bottom: 24rem;
+        }
+
+        &Field {
+            margin-bottom: 8rem;
+
+            &._short {
+                width: calc(50% - 8rem);
+
+                @include mob {
+                    width: 100%;
+                }
+            }
+
+            & .field__support {
+                font-size: 16rem;
+            }
+
+            &._checkbox {
+                padding-top: 10rem;
+            }
+
+            &Link {
+                display: inline-block;
+                margin: 9rem 0 0 auto;
+                color: #aa1f22;
+                font-weight: 500;
+                font-size: 16rem;
+                line-height: 0.9;
+                border-bottom: 1px solid rgba(#aa1f22, 0.8);
+
+                @include mob {
+                    margin: 12rem 0 0 auto;
+                    font-size: 18rem;
+                }
+            }
+        }
+    }
+
+    &__start {
+        margin: 20rem 0 46rem;
+
+        &Title {
+            max-width: 80%;
+            margin-bottom: 32rem;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20rem;
+            line-height: 1.3;
+            text-align: center;
+
+            @include mob {
+                max-width: 100%;
+            }
+        }
+
+        &Area {
+            position: relative;
+            height: 180rem;
+            padding: 30rem;
+            background: #fff;
+            border-radius: 8rem;
+
+            @include mob {
+                border-radius: 14rem;
+            }
+
+            &Border {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+
+                & .dashedBorder__rect {
+                    stroke: #aa1f22;
+                    rx: 8rem;
+                    ry: 8rem;
+
+                    @include mob {
+                        rx: 14rem;
+                        ry: 14rem;
+                        stroke-width: 3rem;
+                        stroke-dasharray: 16 12;
+                    }
+                }
+            }
+
+            &Icon {
+                width: 40rem;
+                height: 40rem;
+                margin-bottom: 18rem;
+
+                @include icon(#005024);
+
+                @include mob {
+                    width: 44rem;
+                    height: 44rem;
+                }
+            }
+
+            &Text {
+                color: #200;
+                font-weight: 500;
+                font-size: 16rem;
+                line-height: 1.3;
+                text-align: center;
+
+                @include mob {
+                    font-size: 18rem;
+                }
+            }
+        }
+    }
+
+    &__scan {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 340rem;
+        overflow: hidden;
+        border-radius: 20rem;
+
+        &Video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        & canvas {
+            position: relative;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__upload {
+        position: relative;
+        z-index: 1;
+        min-height: 100rem;
+        margin: 0 0 26rem;
+        padding: 20rem;
+        background: #fff;
+        border-radius: 8rem;
+
+        @include mob {
+            border-radius: 14rem;
+        }
+
+        &Border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            & .dashedBorder__rect {
+                stroke: #aa1f22;
+                rx: 8rem;
+                ry: 8rem;
+
+                @include mob {
+                    rx: 14rem;
+                    ry: 14rem;
+                    stroke-width: 3rem;
+                    stroke-dasharray: 14 10;
+                }
+            }
+        }
+
+        & input {
+            display: none;
+        }
+
+        &Text {
+            max-width: 80%;
+            color: #222221;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.3;
+            text-align: center;
+
+            @include mob {
+                max-width: 90%;
+                font-size: 18rem;
+            }
+        }
+
+        &File {
+            position: relative;
+            z-index: 1;
+            width: 48rem;
+            height: 48rem;
+            margin-bottom: 8rem;
+            overflow: hidden;
+            border-radius: 10rem;
+
+            & + & {
+                margin-left: 10rem;
+            }
+
+            &Preview {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &Delete {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 3;
+                width: 20rem;
+                height: 20rem;
+                background: #aa1f22;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+
+                &Icon {
+                    width: 8rem;
+                    height: 8rem;
+
+                    @include icon(#fff);
+                }
+            }
+        }
+    }
+
+    &__final {
+        position: relative;
+        justify-content: center;
+        min-height: 180rem;
+        margin: 20rem 0 0;
+        padding: 32rem;
+        background: #fff;
+        border-radius: 16rem;
+
+        &._bottom {
+            margin-bottom: 40rem;
+        }
+
+        @include mob {
+            padding: 28rem 20rem;
+        }
+
+        &Border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: none;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            & .dashedBorder__rect {
+                stroke: #c10f2f;
+                rx: 20rem;
+                ry: 20rem;
+            }
+        }
+
+        &Title {
+            margin-bottom: 12rem;
+            color: #023717;
+            font-weight: 600;
+            font-size: 24rem;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &Text {
+            color: #200;
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 1.2;
+            text-align: center;
+        }
+    }
+
+    &__scanError {
+        position: relative;
+        width: 100%;
+        margin-bottom: 40rem;
+        padding: 48rem 30rem;
+        background: #fff;
+        border-radius: 16rem;
+
+        &Text {
+            margin-bottom: 16rem;
+            color: #aa1f22;
+            font-weight: 600;
+            font-size: 24rem;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &Value {
+            width: 100%;
+            margin-bottom: 24rem;
+            text-align: center;
+        }
+
+        &Button {
+            @include mob {
+                height: 66rem;
+            }
+        }
+    }
+
+    &__code {
+        &Text {
+            margin-bottom: 14rem;
+            color: #1a1b1b;
+            font-weight: 500;
+            font-size: 18rem;
+            line-height: 1.4;
+            text-align: center;
+
+            & a {
+                color: #aa1f22;
+                font-weight: 500;
+                border-bottom: 1rem solid rgba(#aa1f22, 0.64);
+            }
+
+            & span {
+                color: #1a1b1b;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+
+        &Email {
+            margin: 12rem 0;
+            padding: 5rem 14rem 4rem;
+            color: #023717;
+            font-weight: 500;
+            font-size: 20rem;
+            line-height: 1.3;
+            text-align: center;
+            background: #fff;
+            border-radius: 360rem;
+
+            @include mob {
+                padding: 4rem 12rem 3rem;
+            }
+        }
+
+        &Inputs {
+            max-width: 100%;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 16rem 0 0;
+
+        @include mob {
+            flex-direction: column;
+            margin: 22rem 0 0;
+        }
+
+        &Title {
+            margin-bottom: 9rem;
+            color: #222221;
+            font-weight: 600;
+            font-size: 18rem;
+            line-height: 1.3;
+            text-align: center;
+
+            @include mob {
+                margin-right: 0;
+                margin-bottom: 14rem;
+                font-size: 23rem;
+            }
+        }
+
+        &Items {
+            justify-content: center;
+        }
+
+        &Item {
+            width: 56rem;
+            height: 56rem;
+            background: #f9ecfd;
+            border-radius: 14rem;
+
+            @include button;
+
+            @include mob {
+                width: 72rem;
+                height: 72rem;
+                border-radius: 17rem;
+            }
+
+            & + & {
+                margin-left: 12rem;
+
+                @include mob {
+                    margin-left: 10rem;
+                }
+            }
+
+            &Icon {
+                width: 24rem;
+                height: 24rem;
+                object-fit: contain;
+
+                @include mob {
+                    width: 30rem;
+                    height: 30rem;
+                }
+            }
+        }
+    }
+
+    &__foot {
+        margin-top: 30rem;
+
+        @include mob {
+            margin-top: 36rem;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        margin-bottom: 28rem;
+    }
+
+    &__error {
+        width: 100%;
+        transition: $trans;
+
+        &._info {
+            margin-top: 20rem;
+        }
+
+        &:not(._empty) {
+            margin-bottom: 20rem;
+        }
+
+        &._info .error__itemInner {
+            background: #6aa31a;
+        }
+    }
+
+    &__subTitle {
+        padding: 4rem 8rem;
+        font-weight: 600;
+        font-size: 16rem;
+        line-height: 1.3;
+        text-align: center;
+        background: #fbac2f;
+        border-radius: 6rem;
+
+        & span {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 0 7rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14rem;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: -1;
+                width: 22rem;
+                height: 22rem;
+                background: #5d279e;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                content: "";
+            }
+        }
+    }
+
+    &__buttons {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        @include mob {
+            flex-direction: column-reverse;
+            padding: 0 4rem;
+        }
+    }
+
+    &__button {
+        height: 63rem;
+
+        & .v2button {
+            @include mob {
+                border-width: 3rem;
+            }
+        }
+
+        &._autoHeight {
+            height: auto;
+
+            & .v2button {
+                padding-right: 22rem;
+                padding-left: 22rem;
+            }
+
+            @include mob {
+                height: 66rem;
+            }
+        }
+
+        &._fix {
+            width: calc(50% - 10rem);
+
+            & .v2button {
+                padding-right: 4rem;
+                padding-left: 4rem;
+            }
+
+            @include mob {
+                width: 320rem;
+            }
+        }
+
+        & + & {
+            margin-left: 20rem;
+
+            @include mob {
+                margin-bottom: 16rem;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__dynamicButtons {
+        width: 100%;
+        margin-top: 20rem;
+
+        & .list__item {
+            width: 100%;
+
+            &Box {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__dynamicButton {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

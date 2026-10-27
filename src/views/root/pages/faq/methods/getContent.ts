@@ -6,8 +6,8 @@ import I from '../types.ts';
 
 const getContent: I['getContent'] = async function () {
     const r = await promo.resources.getResources(['faq']);
-    const data = r.faq?.value as { sections: { code: string; items: any[] }[] };
-    const questions = (data?.sections?.find((s) => s.code === 'faq')?.items || []) as QuestionT[];
+    const data = r.faq?.value as { items: any[] };
+    const questions = data.items as QuestionT[];
 
     await this.asyncSetState({ questions });
 };

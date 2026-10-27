@@ -2,7 +2,7 @@
     "name": "",
     "version": "0.0.1",
     "private": true,
-    "proxy": "https://dev.mn26.srv08.ru",
+    "proxy": "https://stage.jdecoffee-ny.ru",
     "dependencies": {
         "@promoinstance/sdk": "github:racer242/promo-instance-sdk",
         "@types/crypto-js": "^4.2.2",

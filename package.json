@@ -28,7 +28,7 @@
         "zustand": "^5.0.4"
     },
     "scripts": {
-        "start": "PORT=3048 dotenv -e .env.local craco start",
+        "start": "PORT=3018 dotenv -e .env.local craco start",
         "build": "GENERATE_SOURCEMAP=false dotenv -e .env.prod craco build && node ./build.js",
         "format": "prettier --write \"{,!(node_modules)/**/}*.{ts,tsx}\"",
         "createComponent": "ts-node -r tsconfig-paths/register ./cli/component/index.ts"

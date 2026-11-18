@@ -57,7 +57,7 @@ class Profile extends Page<ProfileI['props'], ProfileI['state']> implements Prof
                         <div>
                             Для получения приза внесите необходимую информацию в форму по{' '}
                             <a
-                                href="https://forms.yandex.ru/cloud/6a1d664e068ff0f5ac394f78"
+                                href="https://forms.yandex.ru/u/6afc2d1d28697bc6d090ace8"
                                 target="_blank"
                                 rel="noreferrer"
                             >

@@ -35,7 +35,7 @@ class Prize extends Default<PrizeI['props'], PrizeI['state']> implements PrizeI 
                         onClick={() => {
                             if (prize.status === 'DATA_NEEDED') {
                                 window.open(
-                                    'https://forms.yandex.ru/cloud/6a1d664e068ff0f5ac394f78',
+                                    'https://forms.yandex.ru/u/6afc2d1d28697bc6d090ace8',
                                     '_blank',
                                 );
                             }
